@@ -113,3 +113,26 @@ func Texts(v ...interface{}) {
 	}
 	println()
 }
+
+func OptionTexts(v []interface{}, timer int, check string) {
+	if check == "on" {
+		for i := 0; i < len(v); i++ {
+			s, _ := sensor(v[i])
+			for i := 0; i < len(s); i++ {
+				print(string(s[i]))
+				time.Sleep(time.Millisecond * time.Duration(timer))
+			}
+		}
+		println()
+	} else if check == "off" {
+		for i := 0; i < len(v); i++ {
+			s, _ := sensor(v[i])
+			for i := 0; i < len(s); i++ {
+				print(string(s[i]))
+				time.Sleep(time.Millisecond * time.Duration(timer))
+			}
+		}
+	} else {
+		println("Incorrect input.")
+	}
+}
