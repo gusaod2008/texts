@@ -114,8 +114,13 @@ func Texts(v ...interface{}) {
 	println()
 }
 
-func OptionTexts(v []interface{}, timer int, check string) {
-	if check == "on" {
+// It is a function of aggregating various options.
+// Users can directly select everything, including input values, number of inputs, time, and line breaks.
+// When you want to add various input values at once, You have to enter it using slices.
+// Line change is divided into true and false. (True = line change, false = don't line change)
+// The time input method and operation method are the same as the WhatTimeText() function.
+func OptionTexts(v []interface{}, timer int, check bool) {
+	if check == true {
 		for i := 0; i < len(v); i++ {
 			s, _ := sensor(v[i])
 			for i := 0; i < len(s); i++ {
@@ -124,7 +129,7 @@ func OptionTexts(v []interface{}, timer int, check string) {
 			}
 		}
 		println()
-	} else if check == "off" {
+	} else if check == false {
 		for i := 0; i < len(v); i++ {
 			s, _ := sensor(v[i])
 			for i := 0; i < len(s); i++ {
