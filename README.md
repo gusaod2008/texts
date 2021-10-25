@@ -10,6 +10,6 @@ package main
 import "github.com/gusaod2008/text"
 
 func main() {
-  text.Text("Hello Text!")
+  texts.Text("Hello Text!")
 }
 ```
